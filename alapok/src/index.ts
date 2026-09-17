@@ -1,29 +1,31 @@
-// export function sayHello(name:string):string{
-//    return `Hello, ${name}!`;
-//}
-//console.log(sayHello("szilasi"));
+/*
+export function sayHello(name:string):string{
+    return `Hello, ${name}!`;
+}
+console.log(sayHello("szilasi"));
 
 
-//let name:string = "Szilasi István";
-//name = "Szalkai Krisztian";
+let name:string = "Szilasi István";
+name = "Szalkai Krisztian";
+*/
+/*
+let age:number = 30;
+let price:number = 19.99;
 
-//let age:number = 30;
-//let price:number = 19.99;
+let isActive:boolean=true;
 
-//let isActive:boolean=true;
+let nigNumber:bigint=90090909909n;
 
-//let nigNumber:bigint=90090909909n;
+let id:symbol=Symbol("userid");
 
-//let id:symbol=Symbol("userid");
-
-//let obj={
-    //[id]:1,
-    //name:"Alice",
-    //age:25,
-    //isActive:false
-//};
-//console.log(obj[id]);
-
+let obj={
+    [id]:1,
+    name:"Alice",
+    age:25,
+    isActive:false
+};
+console.log(obj[id]);
+*/
 
 //let fuggv:symbol=Symbol("fuggv")
 //class Osztaly{
@@ -49,20 +51,20 @@
 //    console.log("rosz")
 //}
 
-const numbers: number[]=[1,2,3,4,5];
-const names:string[]=['Alice','Bob','Cecil','David','Eve']
+//const numbers: number[]=[1,2,3,4,5];
+//const names:string[]=['Alice','Bob','Cecil','David','Eve']
 
-const numbers2:Array<number>=[6,7,8,9,10]
+//const numbers2:Array<number>=[6,7,8,9,10]
 
 //const user:[number, string, boolean]=[1,'Alice', true];
 
-enum Role{
-    Admin,
-    User,
-    Guest
-}
-const userRole:Role=Role.User;
-console.log(userRole)
+//enum Role{
+//    Admin,
+//    User,
+//    Guest
+//}
+//const userRole:Role=Role.User;
+//console.log(userRole)
 
 //type User={
 //    id:number;
@@ -70,21 +72,91 @@ console.log(userRole)
 //    email:string;
 //}
 
-//const user:User ={
+//const user:User | null ={
 //    id:1,
 //    name:"Jhon dane"
 //    email:"asd@gmail.com"
 //}
 
-interface User{
+//type Userisnull = User | null;
+
+//interface IUser{
+//    id:number,
+//    name:string,
+//    email?:string,
+//    avatar?:string
+//}
+
+//const userI:IUser ={
+//    id:1,
+//    name:"Jhon dane",
+//    email:"macilacika@gmail.com"
+//}
+
+//class User implements IUser{
+//    id:number;
+//    name:string;
+//    email?:string;
+//    avatar?:string;
+//    isactive?:boolean;
+//    constructor(id:number,name:string,email:string,avatar:string) {
+//        this.id=id;
+//        this.name=name;
+//        this.email=email;
+//        this.avatar=avatar;
+//
+//    }
+//}
+
+//const user = new User(5,"asd","gmail","fiu")
+
+//console.log(userI);
+
+//type User ={
+//    id:number;
+//    name:string;
+//}
+
+
+//type Admin ={
+//    name:string;
+//    permission:string[];
+//}
+
+//type UserAdmin = User | Admin | null
+
+//const userAdmin :UserAdmin={
+//    id:1,
+//    name:"Bence",
+//    permission : ["Admin"]
+//}
+//console.log(userAdmin);
+
+
+function uzenet(uzi:string):void{
+    console.log(uzi)
+}
+
+function greet(name:string,title?:string):string{
+    if(title){
+        return `hello ${title} ${name}`
+    }
+    return `Hello ${name}`
+}
+console.log(greet("miki"));
+
+const fuggv =(a:number,b:number):number => a+b;
+
+const user:{
     id:number;
     name:string;
-    email?:string;
-}
-
-const user:User ={
+    active:boolean;
+}={
     id:1,
-    name:"Jhon dane"
-}
-
-console.log(user)
+    name:"anna",
+    active:true
+};
+const value : unknown = "hello";
+const text = <string>value;
+//console.log(value.toUpperCase());
+console.log(text.toUpperCase());
