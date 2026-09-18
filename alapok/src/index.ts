@@ -132,7 +132,7 @@ console.log(obj[id]);
 //}
 //console.log(userAdmin);
 
-
+/*
 function uzenet(uzi:string):void{
     console.log(uzi)
 }
@@ -160,3 +160,106 @@ const value : unknown = "hello";
 const text = <string>value;
 //console.log(value.toUpperCase());
 console.log(text.toUpperCase());
+*/
+
+//--------------------interface MŰveletek
+/*
+interface User{
+    id:number;
+    name:string;
+    email:string;
+    avatar?:string;
+}
+
+//csak részét
+const updateUser: Partial<User>={
+    name:"Bela"
+}
+
+//A lehetsegeseket IS
+const user:Required<User>={
+    name:"Bela",
+    id:1,
+    email:"asdsafsdf",
+    avatar:"asd"
+}
+
+//Ezt azt
+const UserPreview:Pick<User, "id" | "name">={
+    id:2,
+    name:"falafel"
+}
+
+//MIndent kivéve ezt
+const userWithoutId: Omit<User, "id">={
+    name:"Anna",
+    email:"anna@gmail.com",
+    avatar:"valami"
+}
+
+//nem modosíthato utolag!
+const ReadOnlyUser:Readonly<User>={
+    name:"Bela",
+    id:1,
+    email:"asdsafsdf",
+    avatar:"asd"
+}
+*/
+
+/*
+interface User{
+    id:number;
+    name:string;
+    email:string;
+    avatar?:string;
+}
+
+type UserKey=keyof User;
+
+let b:UserKey;//id|name|email|avatar
+
+function userLeker(user:User,kulcs:UserKey):any{
+    return user[kulcs]
+}
+const user:User={
+    name:"Bela",
+    id:1,
+    email:"asdsafsdf",
+    avatar:"asd"
+}
+console.log(userLeker(user,"name"));
+
+const user2={
+    name:"Bela",
+    id:1,
+    email:"asdsafsdf"
+}
+
+type User2 = typeof user2
+
+function kiir(name:string|null):void{
+    if(name!==null){
+        console.log(name.toUpperCase());
+    }
+}
+*/
+
+interface IUser{
+    id:number;
+    name:string;
+    email:string;
+    age:number;
+}
+
+const getUser=(): Promise<IUser>=>{
+    return new Promise((resolve,reject)=>{
+        resolve({id:10,name:"maci",email:"asd@gmail.com",age:30})
+    })
+}
+
+async function main ():Promise<void>{
+    const user:IUser = await getUser();
+    console.log(user);
+}
+
+main();
